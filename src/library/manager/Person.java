@@ -12,21 +12,14 @@ import java.util.Scanner;
  * @author ACER
  */
 public class Person {
+
     private int age;
     private String name;
     private String phone;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
     private String CMND;
     private String mail;
     private String location;
-    
+    private boolean isAd;
     Scanner sc = new Scanner(System.in);
 
     public Person() {
@@ -38,6 +31,22 @@ public class Person {
         this.CMND = CMND;
         this.mail = mail;
         this.location = location;
+    }
+
+    public boolean getIsAd() {
+        return isAd;
+    }
+
+    public void setIsAd(boolean isAd) {
+        this.isAd = isAd;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLocation() {
@@ -79,34 +88,40 @@ public class Person {
     public void setMail(String mail) {
         this.mail = mail;
     }
-    
+
     //kiểm tra email
     String patternEmail = "^[a-zA-Z]\\w*@[a-zA-Z]\\w*(\\.[a-zA-Z]\\w*)+$";
-    public void checkMail(){
-        if(this.getMail().matches(patternEmail)){
-            System.out.print("- Nhập vị trí: "); this.setLocation(sc.nextLine());
+
+    public void checkMail() {
+        if (this.getMail().matches(patternEmail)) {
+            this.setMail(sc.nextLine());
         } else {
             System.out.println("-Email không hợp lệ! Vui lòng nhập lại!!!-");
-            System.out.print("- Nhập email: "); this.setMail(sc.nextLine());
+            System.out.print("- Nhập email: ");
+            this.setMail(sc.nextLine());
             checkMail();
         }
     }
-    
-    public void input(){
-        System.out.print("- Nhập tuổi: "); this.setAge(sc.nextInt());
+
+    public void input() {
+        System.out.print("- Nhập tên: ");
+        this.setName(sc.nextLine());
+        System.out.print("- Nhập tuổi: ");
+        this.setAge(sc.nextInt());
         sc.nextLine();
-        System.out.print("- Nhập số điện thoại: "); this.setPhone(sc.nextLine());
-        System.out.print("- Nhập CMND: "); this.setCMND(sc.nextLine());
-        System.out.print("- Nhập email: "); this.setMail(sc.nextLine());
+        System.out.print("- Nhập số điện thoại: ");
+        this.setPhone(sc.nextLine());
+        System.out.print("- Nhập CMND: ");
+        this.setCMND(sc.nextLine());
+        System.out.print("- Nhập email: ");
+        this.setMail(sc.nextLine());
         checkMail();
     }
-    
-    public void display(){
+
+    public void display() {
         System.out.println("- Tuổi: " + this.getAge());
         System.out.println("- Số điện thoại: " + this.getPhone());
         System.out.println("- CMND: " + this.getCMND());
         System.out.println("- Email: " + this.getMail());
     }
 }
-
-

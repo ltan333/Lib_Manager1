@@ -18,6 +18,7 @@ public class AdminManagement {
     //menu admin
     public void menuAdmin() {
         int choice = 0;
+        int choice2 = 0;
         do {
             System.out.println("----------- ADMIN MENU -----------");
             System.out.println("1. Quản lí sách.\n"
@@ -29,7 +30,7 @@ public class AdminManagement {
             sc.nextLine();
             switch (choice) {
                 case 1:
-                    do{
+                    do {
                         System.out.println("----------- QUẢN LÍ SÁCH -----------");
                         System.out.println("1. Thêm sách\n"
                                 + "2. Sửa sách.\n"
@@ -37,18 +38,20 @@ public class AdminManagement {
                                 + "4. Tìm sách.\n"
                                 + "5. Trở lại.");
                         System.out.print("\tYour choice: ");
-                        choice = sc.nextInt(); sc.nextLine();
-                        switch(choice){
+                        choice2 = sc.nextInt();
+                        sc.nextLine();
+                        switch (choice2) {
                             case 1:
                             case 2:
                             case 3:
                             case 4:
-                            default: break;
+                            default:
+                                menuAdmin();
                         }
-                    }while(choice > 0 && choice < 5);
+                    } while (choice2 > 0 && choice2 < 5);
                     break;
                 case 2:
-                    do{
+                    do {
                         System.out.println("----------- QUẢN LÍ KHÁCH HÀNG -----------");
                         System.out.println("1. Thêm thông tin khách hàng.\n"
                                 + "2. Sửa thông tin khách hàng.\n"
@@ -56,18 +59,20 @@ public class AdminManagement {
                                 + "4. Tìm khách hàng.\n"
                                 + "5. Trở lại.");
                         System.out.print("\tYour choice: ");
-                        choice = sc.nextInt(); sc.nextLine();
-                        switch(choice){
+                        choice2 = sc.nextInt();
+                        sc.nextLine();
+                        switch (choice2) {
                             case 1:
                             case 2:
                             case 3:
                             case 4:
-                            default: break;
+                            default:
+                                menuAdmin();
                         }
-                    }while(choice > 0 && choice < 5);
+                    } while (choice2 > 0 && choice2 < 5);
                     break;
                 case 3:
-                    do{
+                    do {
                         System.out.println("----------- BÁO CÁO -----------");
                         System.out.println("1. Số sách được mượn (Tháng).\n"
                                 + "2. chưa có idea.\n"
@@ -75,19 +80,22 @@ public class AdminManagement {
                                 + "4. chưa có idea.\n"
                                 + "5. Trở lại.");
                         System.out.print("\tYour choice: ");
-                        choice = sc.nextInt(); sc.nextLine();
-                        switch(choice){
+                        choice2 = sc.nextInt();
+                        sc.nextLine();
+                        switch (choice2) {
                             case 1:
                             case 2:
                             case 3:
                             case 4:
-                            default: break;
+                            default:
+                                menuAdmin();
                         }
-                    }while(choice > 0 && choice < 5);
+                    } while (choice2 > 0 && choice2 < 5);
                     break;
                 default:
+                    System.out.println("Bye!");
                     break;
             }
-        }while(choice > 0 && choice < 4);
+        } while (choice > 1 && choice < 4);
     }
 }

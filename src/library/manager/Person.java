@@ -119,6 +119,7 @@ public class Person {
     }
 
     public void display() {
+        System.out.println("- Tên: " + this.getName());
         System.out.println("- Tuổi: " + this.getAge());
         System.out.println("- Số điện thoại: " + this.getPhone());
         System.out.println("- CMND: " + this.getCMND());

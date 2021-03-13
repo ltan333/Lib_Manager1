@@ -96,7 +96,7 @@ public class Person {
         if (this.getMail().matches(patternEmail)) {
             this.setMail(sc.nextLine());
         } else {
-            System.out.println("-Email không hợp lệ! Vui lòng nhập lại!!!-");
+            System.out.println("Email không hợp lệ! Vui lòng nhập lại!!!");
             System.out.print("- Nhập email: ");
             this.setMail(sc.nextLine());
             checkMail();

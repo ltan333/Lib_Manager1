@@ -120,6 +120,6 @@ public class Book {
     }
     
     public void displayF() {
-        System.out.format("ID: %s");
+        System.out.format("ID: %s  Tên: %s  Thể loại: %s Tác giả: %s  Đang mượn: %s",this.getID(),this.getBookname(),this.getKind(),this.getAuthor(),this.getBorrowed());
     }
 }

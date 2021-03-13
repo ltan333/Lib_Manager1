@@ -18,7 +18,7 @@ public class BookManager {
     
     public void inputs() {
         int flag = 0;
-        books.inputs();
+            books.inputs();
         for (Book element : bookList) {
             if(element.getBookname().contains(books.books.get(0).getBookname())) {
                 flag = 1;
@@ -36,6 +36,12 @@ public class BookManager {
             }
         }
         
+    }
+    
+    public void display() {
+        for (Book element : bookList) {
+            element.displayF();
+        }
     }
     
     

@@ -17,8 +17,11 @@ public class LibraryManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {    
-        AdminManagement a = new AdminManagement();
-        a.menuAdmin();
+        BookManager a = new BookManager();
+        do {            
+            a.inputs();
+        a.display();
+        } while (true);
     }
     
 }

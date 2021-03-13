@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author ACER
  */
 public class Book {
+
     public double money;
     public String bookname;
     public String author;
@@ -97,29 +98,36 @@ public class Book {
     public void setID(String ID) {
         this.ID = ID;
     }
-    
+
     Scanner sc = new Scanner(System.in);
-    public void input(){
-        System.out.print("- Tên: "); this.setBookname(sc.nextLine());
-        System.out.print("- Tác giả: "); this.setAuthor(sc.nextLine());
-        System.out.print("- Thể loại: "); this.setKind(sc.nextLine());
-        System.out.print("- Tình trạng: "); this.setCondition(sc.nextLine());
-        System.out.print("- Giá tiền (nghìn VNĐ): "); this.setMoney(sc.nextDouble());
+
+    public void input() {
+        System.out.println("----------- NHẬP THÔNG TIN SÁCH -----------");
+        System.out.print("- Tên: ");
+        this.setBookname(sc.nextLine());
+        System.out.print("- Tác giả: ");
+        this.setAuthor(sc.nextLine());
+        System.out.print("- Thể loại: ");
+        this.setKind(sc.nextLine());
+        System.out.print("- Tình trạng: ");
+        this.setCondition(sc.nextLine());
+        System.out.print("- Giá tiền (nghìn VNĐ): ");
+        this.setMoney(sc.nextDouble());
         sc.nextLine();
     }
-    
-    public void display(){
+
+    public void display() {
         System.out.println("----------- THÔNG TIN SÁCH -----------");
         System.out.println("- Mã sách: " + this.getID());
         System.out.println("- Tên sách: " + this.getBookname());
         System.out.println("- Tác giả: " + this.getAuthor());
         System.out.println("- Thể loại sách: " + this.getKind());
         System.out.println("- Tình trạng sách: " + this.getCondition());
-        System.out.println("- Giá sách (nghìn VNĐ): " + this.getMoney());        
+        System.out.println("- Giá sách (nghìn VNĐ): " + this.getMoney());
         System.out.println("- Đang mượn: " + this.getBorrowed());
     }
-    
+
     public void displayF() {
-        System.out.format("ID: %s  Tên: %s  Thể loại: %s Tác giả: %s  Đang mượn: %s",this.getID(),this.getBookname(),this.getKind(),this.getAuthor(),this.getBorrowed());
+        System.out.format("ID: %s   Tên: %s   Thể loại: %s   Tác giả: %s   Số lượng: %d   Đang mượn: %s %n", this.getID(), this.getBookname(), this.getKind(), this.getAuthor(), this.getAmount(), this.getBorrowed());
     }
 }

@@ -30,9 +30,10 @@ public class Books extends Book{
         System.out.print("- Số lượng: "); 
         this.setNumberOfBooks(scan.nextInt());
         scan.nextLine();
-        new ArrayList<>(this.getNumberOfBooks());
+        books = new ArrayList<Book>();
         for (int i = 0; i < this.getNumberOfBooks(); i++) {
             Book b = new Book();
+            b.setID("BO"+this.getAmount()+(int)getMoney()+(int)Math.floor(Math.random()*10)+(int)Math.floor(Math.random()*10)+(int)Math.floor(Math.random()*10)+(int)Math.floor(Math.random()*10)+(int)Math.floor(Math.random()*10)+(int)Math.floor(Math.random()*10)+(int)Math.floor(Math.random()*10)+(int)Math.floor(Math.random()*10)+(int)Math.floor(Math.random()*10)+(int)Math.floor(Math.random()*10));
             b.setBookname(this.getBookname());
             b.setAuthor(this.getAuthor());
             b.setCondition(this.getCondition());

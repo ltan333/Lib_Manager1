@@ -22,17 +22,16 @@ public class Book {
     public String ID;
 
     public Book() {
+        this.borrowed = false;
     }
 
-    public Book(double money, String bookname, String Author, String kind, boolean borrowed, String condition, int amount, String ID) {
+    public Book(double money, String bookname, String Author, String kind, boolean borrowed, String condition) {
         this.money = money;
         this.bookname = bookname;
         this.author = Author;
         this.kind = kind;
         this.borrowed = borrowed;
         this.condition = condition;
-        this.amount = amount;
-        this.ID = ID;
     }
 
     public double getMoney() {
@@ -67,7 +66,7 @@ public class Book {
         this.kind = kind;
     }
 
-    public boolean isBorrowed() {
+    public boolean getBorrowed() {
         return borrowed;
     }
 
@@ -101,13 +100,10 @@ public class Book {
     
     Scanner sc = new Scanner(System.in);
     public void input(){
-        System.out.print("- ID: "); this.setID(sc.nextLine());
         System.out.print("- Tên: "); this.setBookname(sc.nextLine());
         System.out.print("- Tác giả: "); this.setAuthor(sc.nextLine());
         System.out.print("- Thể loại: "); this.setKind(sc.nextLine());
         System.out.print("- Tình trạng: "); this.setCondition(sc.nextLine());
-        System.out.print("- Số lượng: "); this.setAmount(sc.nextInt());
-        sc.nextLine();
         System.out.print("- Giá tiền (nghìn VNĐ): "); this.setMoney(sc.nextDouble());
         sc.nextLine();
     }
@@ -119,7 +115,11 @@ public class Book {
         System.out.println("- Tác giả: " + this.getAuthor());
         System.out.println("- Thể loại sách: " + this.getKind());
         System.out.println("- Tình trạng sách: " + this.getCondition());
-        System.out.println("- Số lượng sách: " + this.getAmount());
-        System.out.println("- Giá sách (nghìn VNĐ): " + this.getMoney());
+        System.out.println("- Giá sách (nghìn VNĐ): " + this.getMoney());        
+        System.out.println("- Đang mượn: " + this.getBorrowed());
+    }
+    
+    public void displayF() {
+        System.out.format("ID: %s");
     }
 }

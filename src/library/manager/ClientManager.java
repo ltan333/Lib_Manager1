@@ -33,6 +33,7 @@ public class ClientManager {
     //menu client
     public void menuClient() {
         int choice = 0;
+        int choice2 = 0;
         do {
             System.out.println("----------- CLIENT MENU -----------");
             System.out.println("1. Quản lí sách.\n"
@@ -51,13 +52,14 @@ public class ClientManager {
                                 + "3. Tìm/xem sách theo thể loại.\n"
                                 + "4. Trở lại.");
                         System.out.print("\tYour choice: ");
-                        switch(choice){
+                        choice2 = sc.nextInt(); sc.nextLine();
+                        switch(choice2){
                             case 1:
                             case 2:
                             case 3:
-                            default: break;
+                            default: menuClient();
                         }
-                    }while(choice > 0 && choice < 4);
+                    }while(choice2 > 0 && choice2 < 3);
                     break;
                 case 2:
                     do{
@@ -67,17 +69,18 @@ public class ClientManager {
                                 + "3. Thay đổi password.\n"
                                 + "4. Trở lại.");
                         System.out.print("\tYour choice: ");
-                        switch(choice){
+                        choice2 = sc.nextInt(); sc.nextLine();
+                        switch(choice2){
                             case 1:
                             case 2:
                             case 3:
-                            default: break;
+                            default: menuClient();
                         }
-                    }while(choice > 0 && choice < 4);
+                    }while(choice2 > 0 && choice2 < 3);
                     break;
                 default: break;
             }
-        }while(choice > 0 && choice < 3);
+        }while(choice > 0 && choice < 2);
     
     }
 }

@@ -17,8 +17,8 @@ public class LibraryManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {    
-        ClientManager a = new ClientManager();
-        a.menuClient();
+        AdminManagement a = new AdminManagement();
+        a.menuAdmin();
     }
     
 }

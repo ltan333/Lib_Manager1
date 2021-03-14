@@ -19,7 +19,7 @@ public class LibraryManager {
     public static void main(String[] args) {    
         BookManager a = new BookManager();
         do {            
-            a.inputs();
+            a.addBooks();
         a.display();
         } while (true);
     }

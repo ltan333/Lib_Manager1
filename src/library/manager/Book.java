@@ -5,13 +5,14 @@
  */
 package library.manager;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author ACER
  */
-public class Book {
+public class Book implements Serializable{
 
     public double money;
     public String bookname;
@@ -99,7 +100,7 @@ public class Book {
         this.ID = ID;
     }
 
-    Scanner sc = new Scanner(System.in);
+    transient Scanner sc = new Scanner(System.in);
 
     public void input() {
         System.out.println("----------- NHẬP THÔNG TIN SÁCH -----------");

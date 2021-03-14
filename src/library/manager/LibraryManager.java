@@ -34,7 +34,7 @@ public class LibraryManager {
         Book book = new Book();
         System.out.println(book.getBookname());
         book = (Book) ois.readObject();
-        System.out.println(book.getBookname());
+        System.out.println(book.getBookname());//////
     }
     
 }
